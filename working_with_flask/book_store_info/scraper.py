@@ -118,7 +118,7 @@ class Bookscrape:
         all_books = self.data
         self.save_json(all_books)
         self.save_s3.save2s3()
-        sys.exit(0)
+        # sys.exit(0)
         
     def read(self):
         with open('working_with_flask/book_store_info/app.json') as json_file:
@@ -131,6 +131,13 @@ class AWSConnect:
             self.s3 = boto3.client('s3')
         def save2s3(self):
             self.s3.upload_file('working_with_flask/book_store_info/app.json', 'lmtd-team-delta','AWSave.json')
+           
+
+
+
 
 # test = Bookscrape()
 # test.scrape_books()
+
+# test.search()
+# test.quit()

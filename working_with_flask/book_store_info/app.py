@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, request, redirect
-from scrap import Bookscrape
+from scraper import Bookscrape
 
 book_scrap = Bookscrape()
 app = Flask(__name__)
