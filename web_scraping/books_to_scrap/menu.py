@@ -1,4 +1,4 @@
-from scrap import Bookscrape
+from scraper import Bookscrape
 import sys
 
 class Menu:
