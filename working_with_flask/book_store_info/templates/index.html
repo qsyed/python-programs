@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Task Master</title>
+{% endblock %}
+
+{% block body %}
+<style>
+.first {
+    padding-top: 5rem;
+}
+.spacing{
+    margin: 2rem 2rem;
+}
+
+body {background-color: rgb(97, 95, 95);}
+p {color: white;}
+h1 {color: white;}
+a {color: white;}
+
+</style>
+<h1 style="text-align: center">LMTD YOUNG SCRAPERS</h1>
+
+<p style="text-align:center;"><img src="https://lithub.com/wp-content/uploads/2019/07/used-books-store-2.jpg" alt="Books"></p>
+
+<p class="first spacing" style = "text-align: center"> Booksite Scraper <span><a href="http://127.0.0.1:5000/scrape">Scrape</a></span></p>
+<p class="spacing" style = "text-align: center"> View items in our inventory <span><a href="http://127.0.0.1:5000/items">Items</a></span></p>
+<p class="spacing" style = "text-align: center"> Update the title and price of a book <span><a href="http://127.0.0.1:5000/update">Update</a></span></p>
+<p style = "text-align: center"> In order to search for a book please visit url: <b>"/search + title of book"</b></p>
+<p class="spacing" style = "text-align: center"> Quit and Save to S3 <span><a href="http://127.0.0.1:5000/quit">Quit and Save</a></span></p>
+{% endblock %}
