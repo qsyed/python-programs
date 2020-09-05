@@ -21,13 +21,26 @@ class Solution:
     def reverse(self, x: int) -> int:
         if x >= 2**31-1 or x <= -2**31:
             return 0 
+        elif x ==0:
+            return 0
         elif x > 0:
-            print(type(x))
+            # print(type(x))
             str_of_x = str(x)
             reversed_x =  str_of_x[::-1]
-            return reversed_x
+            if reversed_x[0] == "0":
+                
+                return reversed_x[1:]
+            elif reversed_x[0] != "0":
+                
+                return reversed_x
         elif x < 0:
             str_of_x = str(x)
             reversed_x =  str_of_x[::-1]
-            delete_negative = reversed_x[:-1]
-            return "-" + delete_negative
+            if reversed_x[0] == "0":
+                take_out_zero = reversed_x[1:]
+                delete_negative = take_out_zero[:-1]
+                return "-" + delete_negative
+            else:
+                delete_negative = reversed_x[:-1]
+                return "-" + delete_negative
+            
