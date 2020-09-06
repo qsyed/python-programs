@@ -1,5 +1,13 @@
 import sqlite3
 
+""" 
+to check if connection is working do: sqlite3 my_friends.db 
+
+check: .tables
+check. schema + table_name
+
+"""
+
 
 conn = sqlite3.connect("sqlite3-python/my_freinds.db")
 
@@ -15,3 +23,6 @@ c.execute()
 conn.commit()
 # must close connection
 conn.close()
+
+
+
