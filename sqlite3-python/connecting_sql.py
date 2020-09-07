@@ -6,6 +6,9 @@ to check if connection is working do: sqlite3 my_friends.db
 check: .tables
 check. schema + table_name
 
+
+the db most already be creat inorder for code to run; first run learning_to_insert.py
+
 """
 
 
@@ -18,7 +21,6 @@ c.execute("CREATE TABLE friends (first_name TEXT, last_name TEXT, closeness INTE
 
 
 
-c.execute()
 
 conn.commit()
 # must close connection
