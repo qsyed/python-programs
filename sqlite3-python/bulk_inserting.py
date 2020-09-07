@@ -1,5 +1,21 @@
 import sqlite3
 conn = sqlite3.connect("sqlite3-python/my_freinds.db")
+
+
+"""
+
+to check if connection is working do: sqlite3 my_friends.db 
+
+check: .tables
+check. schema + table_name
+
+
+the db most already be creat inorder for code to run; first run learning_to_insert.py
+
+
+
+
+"""
 # create cursor object
 c = conn.cursor()
 
