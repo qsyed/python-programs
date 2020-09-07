@@ -19,9 +19,15 @@ c = conn.cursor()
 # insert = '''INSERT INTO friends 
 #             VALUES ('Marry', 'Lewis', 7)'''
 
-form_first = "Marry-Todd"
-query = f"INSERT INTO friends (first_name) VALUES (?)"
-c.execute(query, (form_first,))
+# form_first = "Marry-Todd"
+# query = f"INSERT INTO friends (first_name) VALUES (?)"
+# c.execute(query, (form_first,))
+
+data = ("Steve", "Irwin", 9)
+query = f"INSERT INTO friends VALUES (?,?,?)"
+c.execute(query, data)
+
+
 
 conn.commit()
 
