@@ -1,5 +1,5 @@
 import sqlite3
-conn = sqlite3.connect("sqlite3-python/my_freinds.db")
+conn = sqlite3.connect("sqlite3-python/my_friends.db")
 
 
 """
