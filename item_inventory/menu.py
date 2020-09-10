@@ -91,7 +91,7 @@ class Menu:
 
  def create_items(self):
     task_name = input(f"What is your item's name? \n\n")
-    price = int(input("whats the price of the item"))
+    price = float(input("whats the price of the item"))
     self.inventor.create_items(task_name, price)
  
  
