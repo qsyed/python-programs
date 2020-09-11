@@ -13,7 +13,7 @@ def scrape(url):
         book_data = (get_title(book), get_price(book), get_rating(book))
         all_books.append(book_data)
     
-    print(all_books)
+    save_data(all_books)
 
 def get_title(book):
     return book.find("h3").find("a")['title']
@@ -28,5 +28,14 @@ def get_rating(book):
     word = paragraph.get_attribute_list("class")[-1]
     return ratings[word]
 
+def save_data(all_books):
+    connection = sqlite3.connect("sqlite3-python/books.db")
+    c = connection.cursor()
+    c.execute('''CREATE TABLE books 
+        (title TEXT, price REAL, rating INTEGER)''')
+
+    c.executemany("INSERT INTO books VALUES (?,?,?)", all_books)
+    connection.commit()
+    connection.close()
 
 scrape("http://books.toscrape.com/catalogue/category/books/history_32/index.html")
