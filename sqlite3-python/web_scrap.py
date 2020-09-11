@@ -4,18 +4,29 @@ from bs4 import BeautifulSoup
 
 
 
-response = requests.get("http://books.toscrape.com/catalogue/category/books/history_32/index.html")
-soup = BeautifulSoup(response.text, "html.parser" )
+def scrape(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, "html.parser" )
+    books = soup.find_all("article")
+    all_books = []
+    for book in books:
+        book_data = (get_title(book), get_price(book), get_rating(book))
+        all_books.append(book_data)
+    
+    print(all_books)
 
-books = soup.find_all("article")
+def get_title(book):
+    return book.find("h3").find("a")['title']
 
-for book in books:
-    title = book.find("h3").find("a")['title']
+def get_price(book):
     price = book.select(".price_color")[0].get_text()
-    price = float(price.replace("Â","").replace("£",""))
+    return float(price.replace("Â","").replace("£",""))
+
+def get_rating(book):
     paragraph = book.select(".star-rating")[0]
     ratings = {"Zero": 0, "One": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5 }
-    rating = paragraph.get_attribute_list("class")[-1]
-    int_rating = ratings[rating]
-    print(int_rating)
+    word = paragraph.get_attribute_list("class")[-1]
+    return ratings[word]
 
+
+scrape("http://books.toscrape.com/catalogue/category/books/history_32/index.html")
