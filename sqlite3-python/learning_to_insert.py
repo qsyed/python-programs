@@ -9,7 +9,7 @@ check: .schema + table_name
 """
 
 
-conn = sqlite3.connect("sqlite3-python/my_freinds.db")
+conn = sqlite3.connect("sqlite3-python/my_friends.db")
 
 # create cursor obj  and execute sql commands
 

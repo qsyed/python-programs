@@ -28,7 +28,9 @@ class Inventory:
         print(f"Item ID: {count}")
       else:
         count +=1
-    print("Sorry We dont have the item")
+
+    if search not in item.item_name:
+      print("Sorry We dont have the item")
     
   def update_items(self, item_id):
     self.all_items[item_id].price = input("Enter the new price for that book:")
@@ -38,7 +40,7 @@ class Inventory:
     for x in self.all_items:
       print(x)
     # return self.all_items
-    print (len(self.all_items))
+    # print (len(self.all_items))
 
   def quit(self):
  
