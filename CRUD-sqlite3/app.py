@@ -36,6 +36,7 @@ def get_rating(book):
 def save_to_db(all_books):
     connection = sqlite3.connect("CRUD-sqlite3/books_data.db")
     c = connection.cursor()
+    c.execute("DROP TABLE books")
     c.execute('''CREATE TABLE books 
         (title TEXT, price REAL, rating INTEGER)''')
 
