@@ -14,6 +14,7 @@ class scraping:
 
     def scrape(self):
         all_books = []
+        id = 0
         number_of_pages = int(input("how many pages would you like to scrap ? "))
         for n in range(1, number_of_pages+1):
             scraping_url = self.base_url.format(n)
@@ -21,8 +22,9 @@ class scraping:
             soup = BeautifulSoup(response.text, "html.parser" )
             books = soup.find_all("article")
             for book in books:
-                book_data = (self.get_title(book), self.get_price(book), self.get_rating(book))
+                book_data = (id, self.get_title(book), self.get_price(book), self.get_rating(book))
                 all_books.append(book_data)
+                id += 1
         
         self.save_to_db(all_books)
         print(all_books)
@@ -47,27 +49,48 @@ class scraping:
         c = connection.cursor()
         c.execute("DROP TABLE books")
         c.execute('''CREATE TABLE books 
-            (title TEXT, price REAL, rating INTEGER)''')
+            (id INTEGER, title TEXT, price REAL, rating INTEGER)''')
 
-        c.executemany("INSERT INTO books VALUES (?,?,?)", all_books)
+        c.executemany("INSERT INTO books VALUES (?,?,?,?)", all_books)
         connection.commit()
         connection.close()
 
     def view_pro(self):
         self.CRUD_func.view_all_products()
 
+    def searc_item(self):
+        self.CRUD_func.search_item()
 
 
 class CRUD:
     def __init__(self):
         pass
+
     def view_all_products(self):
         connection = sqlite3.connect("CRUD-sqlite3/books_data.db")
         c = connection.cursor()
         items = c.execute("SELECT * FROM books")
-        print(items)
+        for item in items:
+            print(item)
         connection.commit()
         connection.close()
+
+    def search_item(self):
+        connection = sqlite3.connect("CRUD-sqlite3/books_data.db")
+        c = connection.cursor()
+       
+        book_id = input("enter the name of the book ")
+        c.execute("""Select * from books WHERE id=?""", (book_id, ))
+        rows = c.fetchone()
+        print(rows)
+       
+       
+
+        connection.commit()
+        connection.close()
+
+
+
 
 
 
@@ -77,3 +100,4 @@ class CRUD:
 test = scraping()
 test.scrape()
 test.view_pro()
+test.searc_item()
