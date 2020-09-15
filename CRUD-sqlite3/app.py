@@ -63,6 +63,9 @@ class scraping:
 
     def update_item(self):
         self.CRUD_func.update()
+    
+    def delete_item(self):
+        self.CRUD_func.delete()
 
     def quit(self):
         self.CRUD_func.quit()
@@ -99,12 +102,31 @@ class CRUD:
         
 
         self.c.execute("""UPDATE books SET title=?, price=?, rating=? WHERE id=? """, (title, price, rating, book_id))
-
+        
+        print("*****************************************************")
+        print(" ")
         print("the book has been saved, quit app to save changes !!!")
+        print(" ")
+        print("*****************************************************")
+
         self.c.execute("""SELECT id, title, price, rating FROM books WHERE id=?""", (book_id, ))
         rows = self.c.fetchone()
         print(rows)
-             
+    
+
+    def delete(self):
+        book_id = input("enter the id of the book to delete ")
+
+        self.c.execute("""DELETE FROM books WHERE id=?""", (book_id, ))
+
+
+
+        print("*****************************************************")
+        print(" ")
+        print("the book has been deleted, quit app to save changes !!!")
+        print(" ")
+        print("*****************************************************")
+
 
         
 
@@ -123,5 +145,6 @@ test = scraping()
 # test.scrape()
 test.view_pro()
 test.searc_item()
-test.update_item()
+# test.update_item()
+# test.delete_item()
 test.quit()
