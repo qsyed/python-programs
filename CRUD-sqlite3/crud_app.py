@@ -55,10 +55,10 @@ class scraping:
         connection.commit()
         connection.close()
 
-    def view_pro(self):
+    def view_products(self):
         self.CRUD_func.view_all_products()
 
-    def searc_item(self):
+    def search_item(self):
         self.CRUD_func.search_item()
 
     def update_item(self):
@@ -141,10 +141,10 @@ class CRUD:
         
 
 
-test = scraping()
+# test = scraping()
 # test.scrape()
-test.view_pro()
-test.searc_item()
+# test.view_pro()
+# test.searc_item()
 # test.update_item()
 # test.delete_item()
-test.quit()
+# test.quit()
