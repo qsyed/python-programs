@@ -16,18 +16,24 @@ class scraping:
         all_books = []
         id = 0
         number_of_pages = int(input("how many pages would you like to scrap ? "))
-        for n in range(1, number_of_pages+1):
-            scraping_url = self.base_url.format(n)
-            response = requests.get(scraping_url)
-            soup = BeautifulSoup(response.text, "html.parser" )
-            books = soup.find_all("article")
-            for book in books:
-                book_data = (id, self.get_title(book), self.get_price(book), self.get_rating(book))
-                all_books.append(book_data)
-                id += 1
+        
+
+        if number_of_pages <= 50:
+            print("This may take a second hang in there")
+            for n in range(1, number_of_pages+1):
+                scraping_url = self.base_url.format(n)
+                response = requests.get(scraping_url)
+                soup = BeautifulSoup(response.text, "html.parser" )
+                books = soup.find_all("article")
+                for book in books:
+                    book_data = (id, self.get_title(book), self.get_price(book), self.get_rating(book))
+                    all_books.append(book_data)
+                    id += 1
+        else:
+            print("there are not that many pages on the site use a different number")
         
         self.save_to_db(all_books)
-        print(all_books)
+        # print(all_books)
 
 
     def get_title(self, book):
