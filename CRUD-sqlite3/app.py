@@ -61,35 +61,57 @@ class scraping:
     def searc_item(self):
         self.CRUD_func.search_item()
 
+    def update_item(self):
+        self.CRUD_func.update()
+
+    def quit(self):
+        self.CRUD_func.quit()
 
 class CRUD:
     def __init__(self):
-        pass
+        self.connection  = sqlite3.connect("CRUD-sqlite3/books_data.db")
+        self.c = self.connection.cursor()
 
     def view_all_products(self):
-        connection = sqlite3.connect("CRUD-sqlite3/books_data.db")
-        c = connection.cursor()
-        items = c.execute("SELECT * FROM books")
+        items = self.c.execute("SELECT * FROM books")
         for item in items:
             print(item)
-        connection.commit()
-        connection.close()
+       
 
     def search_item(self):
-        connection = sqlite3.connect("CRUD-sqlite3/books_data.db")
-        c = connection.cursor()
-       
-        book_id = input("enter the name of the book ")
-        c.execute("""Select * from books WHERE id=?""", (book_id, ))
-        rows = c.fetchone()
+        
+        book_id = input("enter the id of item you want to view")
+        self.c.execute("""Select * from books WHERE id=?""", (book_id, ))
+        rows = self.c.fetchone()
         print(rows)
-       
-       
-
-        connection.commit()
-        connection.close()
+        
+        
 
 
+    def update(self):
+
+        
+        book_id = input("enter the id of the book to update ")
+        
+        title = input("enter the new title: ")
+        price = float(input("enter the new price: "))
+        rating = int(input("enter the new rating: "))
+        
+
+        self.c.execute("""UPDATE books SET title=?, price=?, rating=? WHERE id=? """, (title, price, rating, book_id))
+
+        print("the book has been saved, quit app to save changes !!!")
+        self.c.execute("""SELECT id, title, price, rating FROM books WHERE id=?""", (book_id, ))
+        rows = self.c.fetchone()
+        print(rows)
+             
+
+        
+
+
+    def quit(self):
+        self.connection.commit()
+        self.connection.close()
 
 
 
@@ -98,6 +120,8 @@ class CRUD:
 
 
 test = scraping()
-test.scrape()
+# test.scrape()
 test.view_pro()
 test.searc_item()
+test.update_item()
+test.quit()
