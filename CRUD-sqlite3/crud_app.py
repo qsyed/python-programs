@@ -15,6 +15,7 @@ class scraping:
     def scrape(self):
         all_books = []
         id = 0
+        print("please enter a number less than or equal to 50")
         number_of_pages = int(input("how many pages would you like to scrap ? "))
         
 
@@ -30,7 +31,8 @@ class scraping:
                     all_books.append(book_data)
                     id += 1
         else:
-            print("there are not that many pages on the site use a different number")
+            print("there are only 50 pages on the site.")
+            print("please enter a number less than or equal to 50")
         
         self.save_to_db(all_books)
         # print(all_books)
@@ -66,6 +68,9 @@ class scraping:
 
     def search_item(self):
         self.CRUD_func.search_item()
+    
+    def search_item_rating(self):
+        self.CRUD_func.search_item_rating()
 
     def update_item(self):
         self.CRUD_func.update()
@@ -89,11 +94,20 @@ class CRUD:
 
     def search_item(self):
         
-        book_id = input("enter the id of item you want to view")
+        book_id = input("enter the id of item you want to view ")
         self.c.execute("""Select * from books WHERE id=?""", (book_id, ))
         rows = self.c.fetchone()
         print(rows)
         
+    
+
+    def search_item_rating(self):
+        rating = input("enter the rating to search by ")
+        self.c.execute("""Select * from books WHERE rating=?""", (rating, ))
+        rows = self.c.fetchall()
+
+        for row in rows:
+            print(row)
         
 
 
@@ -118,6 +132,9 @@ class CRUD:
         self.c.execute("""SELECT id, title, price, rating FROM books WHERE id=?""", (book_id, ))
         rows = self.c.fetchone()
         print(rows)
+
+
+
     
 
     def delete(self):
