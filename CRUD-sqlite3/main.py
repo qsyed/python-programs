@@ -12,11 +12,13 @@ class Menu:
 
       "3": self.search_item,
 
-      "4": self.update_item,
+      "4": self.search_item_rating,
 
-      "5": self.delete_item,
+      "5": self.update_item,
 
-      "6": self.quit
+      "6": self.delete_item,
+
+      "7": self.quit
 
 
     }
@@ -34,13 +36,15 @@ class Menu:
     
                 2. See All Products
     
-                3. Search For an Item 
+                3. Search For An Item By ID
 
-                4. Update Item
+                4. Search For An Item By Rating
 
-                5. Delete Item
+                5. Update Item
 
-                6. QUIT 
+                6. Delete Item
+
+                7. QUIT 
 
                                   
                 """)
@@ -58,6 +62,9 @@ class Menu:
  
     def search_item(self):
         self.app.search_item()
+
+    def search_item_rating(self):
+        self.app.search_item_rating()
     
     def update_item(self):
         self.app.update_item()
