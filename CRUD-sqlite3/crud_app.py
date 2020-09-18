@@ -15,12 +15,12 @@ class scraping:
     def scrape(self):
         all_books = []
         id = 0
-        print("please enter a number less than or equal to 50")
+        print("there are 50 pages on the site: ")
         number_of_pages = int(input("how many pages would you like to scrap ? "))
         
 
-        if number_of_pages <= 50:
-            print("This may take a second hang in there")
+        if number_of_pages > 0 and number_of_pages <= 50:
+            print("This may take a while hang in there")
             for n in range(1, number_of_pages+1):
                 scraping_url = self.base_url.format(n)
                 response = requests.get(scraping_url)
@@ -30,9 +30,12 @@ class scraping:
                     book_data = (id, self.get_title(book), self.get_price(book), self.get_rating(book))
                     all_books.append(book_data)
                     id += 1
+            print("the items have been saved into the data base")
         else:
-            print("there are only 50 pages on the site.")
-            print("please enter a number less than or equal to 50")
+            print("enter a number between 1 and 50")
+            return
+        
+       
         
         self.save_to_db(all_books)
         # print(all_books)
@@ -103,11 +106,15 @@ class CRUD:
 
     def search_item_rating(self):
         rating = input("enter the rating to search by ")
-        self.c.execute("""Select * from books WHERE rating=?""", (rating, ))
-        rows = self.c.fetchall()
-
-        for row in rows:
-            print(row)
+        int_rating = int(rating)
+        if int_rating <= 5:
+            self.c.execute("""Select * from books WHERE rating=?""", (rating, ))
+            rows = self.c.fetchall()
+            for row in rows:
+                print(row)
+        else:
+            print("Books are rated on a scale of 1 through 5.")
+            print("please enter a valid number")
         
 
 
@@ -120,22 +127,24 @@ class CRUD:
         price = float(input("enter the new price: "))
         rating = int(input("enter the new rating: "))
         
+        if isinstance(price, float) and isinstance(rating, int):
+            if rating >= 0 and rating <= 5:
+                self.c.execute("""UPDATE books SET title=?, price=?, rating=? WHERE id=? """, (title, price, rating, book_id))
+                print("*****************************************************")
+                print(" ")
+                print("the book has been saved, quit app to save changes !!!")
+                print(" ")
+                print("*****************************************************")
 
-        self.c.execute("""UPDATE books SET title=?, price=?, rating=? WHERE id=? """, (title, price, rating, book_id))
+                self.c.execute("""SELECT id, title, price, rating FROM books WHERE id=?""", (book_id, ))
+                rows = self.c.fetchone()
+                print(rows)
+
+            else:
+                print("make sure that that you pass in the correct information")
+                print("the rating scale is from 1 through 5")
         
-        print("*****************************************************")
-        print(" ")
-        print("the book has been saved, quit app to save changes !!!")
-        print(" ")
-        print("*****************************************************")
-
-        self.c.execute("""SELECT id, title, price, rating FROM books WHERE id=?""", (book_id, ))
-        rows = self.c.fetchone()
-        print(rows)
-
-
-
-    
+   
 
     def delete(self):
         book_id = input("enter the id of the book to delete ")
