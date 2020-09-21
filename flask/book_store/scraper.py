@@ -111,7 +111,7 @@ class Bookscrape:
 
 
     def save_json(self, all_books):
-        with open('working_with_flask/book_store_info/app.json', "w") as fp:
+        with open('flask/book_store/app.json', "w") as fp:
             json.dump(all_books, fp)
 
     def quit(self):
@@ -121,7 +121,7 @@ class Bookscrape:
         # sys.exit(0)
         
     def read(self):
-        with open('working_with_flask/book_store_info/app.json') as json_file:
+        with open('flask/book_store/app.json') as json_file:
            self.data = json.load(json_file)
            
         
@@ -130,7 +130,7 @@ class AWSConnect:
         def __init__(self):
             self.s3 = boto3.client('s3')
         def save2s3(self):
-            self.s3.upload_file('working_with_flask/book_store_info/app.json', 'lmtd-team-delta','AWSave.json')
+            self.s3.upload_file('flask/book_store/app.json', 'lmtd-team-delta','AWSave.json')
            
 
 
