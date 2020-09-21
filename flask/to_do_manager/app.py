@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -21,10 +21,35 @@ class Todo(db.Model):
     def __repr__(self):
         return '<Task %r>' % self.id
 
+"""
+to create db first execute python3 
+    then in python shell: from app import db
+                    next: db.create_all()
+                    
 
-@app.route("/")
+"""
+
+
+@app.route("/", methods=['POST', 'GET'])
 def index():
-    return render_template('index.html')
+    if request.method == 'POST':
+        # correspondes to the form created in index.html
+        # the form name is content; we will take the info from the form and pass it along to the todo class
+
+        task_content = request.form["content"]   
+        new_todo = Todo(content = task_content)
+        
+        # adding new task to db 
+        # first we add the task then commit the changes to the db
+        try:
+            db.session.add(new_task)
+            db.session.commit()
+            return redirect("/")
+        except:
+            return 'there was an issure adding your task'
+    else:
+        tasks = Todo.query.order_by(Todo.date_created).all()
+        return render_template('index.html', tasks=tasks)
 
 
 
