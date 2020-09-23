@@ -116,6 +116,7 @@ class CRUD:
             print("Books are rated on a scale of 1 through 5.")
             print("please enter a valid number")
         
+        
 
 
     def update(self):
@@ -132,7 +133,7 @@ class CRUD:
                 self.c.execute("""UPDATE books SET title=?, price=?, rating=? WHERE id=? """, (title, price, rating, book_id))
                 print("*****************************************************")
                 print(" ")
-                print("the book has been saved, quit app to save changes !!!")
+                print("the book has been saved !!!")
                 print(" ")
                 print("*****************************************************")
 
@@ -143,6 +144,7 @@ class CRUD:
             else:
                 print("make sure that that you pass in the correct information")
                 print("the rating scale is from 1 through 5")
+        self.connection.commit()
         
    
 
@@ -155,16 +157,17 @@ class CRUD:
 
         print("*****************************************************")
         print(" ")
-        print("the book has been deleted, quit app to save changes !!!")
+        print("the book has been deleted !!!")
         print(" ")
         print("*****************************************************")
+        self.connection.commit()
 
 
         
 
 
     def quit(self):
-        self.connection.commit()
+        
         self.connection.close()
 
 
