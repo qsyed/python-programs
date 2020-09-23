@@ -163,6 +163,8 @@ class CRUD:
         self.connection.commit()
 
 
+
+
         
 
 
@@ -175,11 +177,3 @@ class CRUD:
 
         
 
-
-# test = scraping()
-# test.scrape()
-# test.view_pro()
-# test.searc_item()
-# test.update_item()
-# test.delete_item()
-# test.quit()
