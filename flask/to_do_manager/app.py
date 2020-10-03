@@ -24,7 +24,7 @@ to create db first execute python3
                     
 
 """
-
+ 
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
