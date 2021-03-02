@@ -17,13 +17,18 @@
 ## flask/to_do_manager 
 > this python program is a simple CRUD app using Flask. this was a code along: https://www.youtube.com/watch?v=Z1RJmh_OqeA&t=2482s
 
+## Item Inventory
+> This is a simple CRUD application that mimics a warehouse. A user can add items into inventory. Inorder to create an item a user must pass in the item name and price, when added into inventory the program will create a unique id to track the item. Once created, users can manipulate the items that are in inventory.
+
+
+
+
 ## Rock Paper Scissor
 > This simple app allows mutiple users to play the well known game, Rock-Paper-Scissor through a command line interface. The leaderboard of the game is saved upon quiting the app, and saved to an s3 bucket.
 
 
  
- ## Item Inventory
- > This is a simple CRUD application that mimics a warehouse. A user can add items into inventory. Inorder to create an item a user must pass in the item name and price, when added into inventory the program will create a unique id to track the item. Once created, users can manipulate the items that are in inventory.
+
  
  ## Hacker-rank 
  > My solutions to hacker rank problems
