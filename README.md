@@ -15,7 +15,7 @@
 
 
 ## flask/to_do_manager 
-> this python program is a simple CRUD app using Flask. this was a code along: https://www.youtube.com/watch?v=Z1RJmh_OqeA&t=2482s
+> this python program is a simple CRUD app using Flask. this was a code along from [freeCodeCamp.org](https://www.youtube.com/watch?v=Z1RJmh_OqeA&t=2482s)
 
 
 ## Hacker-rank 
