@@ -17,9 +17,14 @@
 ## flask/to_do_manager 
 > this python program is a simple CRUD app using Flask. this was a code along: https://www.youtube.com/watch?v=Z1RJmh_OqeA&t=2482s
 
+
 ## Item Inventory
 > This is a simple CRUD application that mimics a warehouse. A user can add items into inventory. Inorder to create an item a user must pass in the item name and price, when added into inventory the program will create a unique id to track the item. Once created, users can manipulate the items that are in inventory.
 
+ ## leetcode
+ > my solutions to leetcode problems 
+
+ 
 
 
 
@@ -33,7 +38,6 @@
  ## Hacker-rank 
  > My solutions to hacker rank problems
  
- ## leetcode
- > my solutions to leetcode problems
+\
  
  
