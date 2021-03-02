@@ -25,9 +25,10 @@
 > This is a simple CRUD application that mimics a warehouse. A user can add items into inventory. Inorder to create an item a user must pass in the item name and price, when added into inventory the program will create a unique id to track the item. Once created, users can manipulate the items that are in inventory.
 
  ## leetcode
- > my solutions to leetcode problems 
+> my solutions to leetcode problems 
 
 ## playlist 
+> this is a simple python program that is meant to resammble the backend services of an app;ication like spotify. Essetianly this CRUD app allows a user to create a playlist of songs that they like. 
 
 ## regex 
 
