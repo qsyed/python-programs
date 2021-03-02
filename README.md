@@ -10,6 +10,12 @@
 ## CRUD-sqlite3
 > This project utilizes the python libraries BeautifulSoup, sqlite3, and requests. A user can input how many pages of data from the website, https://books.toscrape.com/ The program gets every book's title, price, and rating and saves it to an sqlite database. From the command line a user can start to use the promoted commands to interact with the database. A user can delete, update, and search for specific items. 
  
+## flask/book_store
+>
+
+## flask?to_do_manager 
+> 
+
 ## Rock Paper Scissor
 > This simple app allows mutiple users to play the well known game, Rock-Paper-Scissor through a command line interface. The leaderboard of the game is saved upon quiting the app, and saved to an s3 bucket.
 
