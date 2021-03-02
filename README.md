@@ -28,7 +28,7 @@
 > my solutions to leetcode problems 
 
 ## playlist 
-> this is a simple python program that is meant to resammble the backend services of an app;ication like spotify. Essetianly this CRUD app allows a user to create a playlist of songs that they like. 
+> this is a simple python program that is meant to resammble the backend services of an application like spotify. Essetianly this CRUD app allows a user to create a playlist of songs that they like. 
 
 ## regex 
 
