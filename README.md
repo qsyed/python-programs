@@ -31,6 +31,7 @@
 > this is a simple python program that is meant to resammble the backend services of an application like spotify. Essetianly this CRUD app allows a user to create a playlist of songs that they like. 
 
 ## regex/parsing_urls 
+> a simple regex that parses a given url. the program will group the url into appopraiate tags like: Protocol, Domain, stac. and will print it out. 
 
 ## regex/regular express 
 
