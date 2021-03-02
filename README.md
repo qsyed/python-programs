@@ -49,7 +49,7 @@
 
 
 ## sqlite3-python 
-> in this section I learn how to connect to an sqlite database and do things such as instertion, bulk insertion, selecting items, and data valiadation. this section is from the colt steele python course [Go to the Support Web Site](https://support.west-wind.com)
+> in this section I learn how to connect to an sqlite database and do things such as instertion, bulk insertion, selecting items, and data valiadation. this section is from the [Colt Steele's python course](https://www.udemy.com/course/the-modern-python3-bootcamp/)
 
 
 ## web_scraping 
