@@ -11,7 +11,8 @@
 > This project utilizes the python libraries BeautifulSoup, sqlite3, and requests. A user can input how many pages of data from the website, https://books.toscrape.com/ The program gets every book's title, price, and rating and saves it to an sqlite database. From the command line a user can start to use the promoted commands to interact with the database. A user can delete, update, and search for specific items. 
  
 ## flask/book_store
-> some of the python libraries BeautifulSoup, Flask, boto3, and sys. This project scraps the website, https://books.toscrape.com and saves the content to a s3 bucket and as a json file. Flask is used in this project create
+> some of the python libraries BeautifulSoup, Flask, boto3, and sys. This project scraps the website, https://books.toscrape.com and saves the content to a s3 bucket and as a json file. Flask is used in this project create asimple front end interface were users can interact with the scrapped data. 
+
 
 ## flask/to_do_manager 
 > this python program is a simple CRUD app using Flask. this was a code along: https://www.youtube.com/watch?v=Z1RJmh_OqeA&t=2482s
