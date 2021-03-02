@@ -27,13 +27,24 @@
  ## leetcode
  > my solutions to leetcode problems 
 
+## playlist 
 
+## regex 
+
+
+## requests 
 
 
 
 ## Rock Paper Scissor
 > This simple app allows mutiple users to play the well known game, Rock-Paper-Scissor through a command line interface. The leaderboard of the game is saved upon quiting the app, and saved to an s3 bucket.
 
-\
+
+
+## sqlite3-python 
+
+
+## web_scraping 
+
  
  
