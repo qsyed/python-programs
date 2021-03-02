@@ -1,9 +1,5 @@
 # python-programs
 
-
-### This repo contains some of my completed python application's.
-
-
 ## API Project
 > This application uses the alpha vantage api to create an investment app similar to acorns and robinhood. A user can register for a unique account and proceed  to buy and sell stocks with real time stock pricing information. Upon creation of  a users account, they are asked how much they want to put into their account in order to buy stocks. Within the program there is logic to calculate how much profit, if any a user has made. Upon exiting the application the data of all existing users and their portfolio is saved to an AWS s3 bucket in the form of a json file.
 
