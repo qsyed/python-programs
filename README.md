@@ -34,9 +34,10 @@
 > a simple regex that parses a given url. the program will group the url into appopraiate tags like: Protocol, Domain, stac. and will print it out. 
 
 ## regex/regular express 
+> a simple regex that will parse a given postfix expression. the program will return the different parts of postfix expression. 
 
 ## regex/validating_phone_numbers
-
+> a simple regex that parses phone numbers and verifys that they are indeed actual phone numbers. 
 
 ## requests 
 
