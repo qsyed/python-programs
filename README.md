@@ -31,13 +31,15 @@
 > this is a simple python program that is meant to resammble the backend services of an application like spotify. Essetianly this CRUD app allows a user to create a playlist of songs that they like. 
 
 ## regex/parsing_urls 
-> a simple regex that parses a given url. the program will group the url into appopraiate tags like: Protocol, Domain, stac. and will print it out. this was a code along from: https://www.udemy.com/course/the-modern-python3-bootcamp/ 
+> a simple regex that parses a given url. the program will group the url into appopraiate tags like: Protocol, Domain, stac. and will print it out. this was a code along from [Colt Steele's python course](https://www.udemy.com/course/the-modern-python3-bootcamp/)
+
 
 ## regex/regular express 
 > a simple regex that will parse a given postfix expression. the program will return the different parts of postfix expression. 
 
 ## regex/validating_phone_numbers
-> a simple regex that parses phone numbers and verifys that they are indeed actual phone numbers. this was a code along from: https://www.udemy.com/course/the-modern-python3-bootcamp/
+> a simple regex that parses phone numbers and verifys that they are indeed actual phone numbers. this was a code along from [Colt Steele's python course](https://www.udemy.com/course/the-modern-python3-bootcamp/)
+
 
 ## requests 
 
