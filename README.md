@@ -38,6 +38,7 @@
 
 
 ## requests 
+> In this section i learned how to use the requests python module to make http requests. in this section a downloaded files, and images using the request module.
 
 
 
@@ -51,7 +52,7 @@
 
 
 ## web_scraping/books_to_scrap
->
+> This is a simple CRUD applicaton. A user provides how many number of pages of data they want to extract from a webiste. Once the content of the website is scrapped its placed into a json file. A user can interact with the data that was extracted and can manipulate the data. upon quiting the program the scrapped data is placed in an s3 bucket.
 
 
 ## web_scraping/guessing_game 
