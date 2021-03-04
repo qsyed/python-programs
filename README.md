@@ -55,7 +55,7 @@
 
 
 ## web_scraping/guessing_game 
-> This is a code along from [Colt Steele's python course](https://www.udemy.com/course/the-modern-python3-bootcamp/). In this section I leanrned how to scrap the website [quotes to scrape](http://quotes.toscrape.com/). The program extracts the quote, author, and a link to the quote. and places into a csv file. 
+> This is a code along from [Colt Steele's python course](https://www.udemy.com/course/the-modern-python3-bootcamp/). In this section I leanrned how to scrap the website [quotes to scrape](http://quotes.toscrape.com/). In the csv_scraper.py file, the program extracts the quote, author, and a link to the quote and places into a csv file. In the game.py file, the program contains the logicc for a simple guessing game. the program choices a random quote and prompts the user to enter the name of the author. The program gives you four chances to get the name of the author correct, providing hints each time you get an attempt wrong. 
 
  
  
