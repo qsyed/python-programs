@@ -47,10 +47,15 @@
 
 
 ## sqlite3-python 
-> in this section I learn how to connect to an sqlite database and do things such as instertion, bulk insertion, selecting items, and data valiadation. this section is from the [Colt Steele's python course](https://www.udemy.com/course/the-modern-python3-bootcamp/)
+> In this section I learn how to connect to an sqlite database and do things such as instertion, bulk insertion, selecting items, and data valiadation. this section is from the [Colt Steele's python course](https://www.udemy.com/course/the-modern-python3-bootcamp/)
 
 
-## web_scraping 
+## web_scraping/books_to_scrap
+>
+
+
+## web_scraping/guessing_game 
+> This is a code along from [Colt Steele's python course](https://www.udemy.com/course/the-modern-python3-bootcamp/). In this section I leanrned how to scrap the website [quotes to scrape](http://quotes.toscrape.com/). The program extracts the quote, author, and a link to the quote. and places into a csv file. 
 
  
  
